@@ -38,34 +38,34 @@
     </div>
      <!-- button session -->
    <div class=" rounded-lg bg-white grid grid-cols-3 gap-5 mt-7 max-w-lg mx-auto p-4 min-h-[300px]">
-         <div id="add-money-btn" class =" hover:bg-blue-100 flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+         <div id="add-money-btn" class =" btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/money1.png" alt="" class="">
             <p>Add Money</p>
          </div>
-          <div id="cash-out-btn" class ="hover:bg-blue-100 flex flex-col  items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="cash-out-btn" class ="btn-hover  flex flex-col  items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/send1.png" alt="" class="">
             <p>Cash out</p>
          </div>
-          <div id="money-transfer-btn" class ="hover:bg-blue-100 flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="money-transfer-btn" class ="btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/transaction1.png" alt="" class="">
             <p>Transfer Money</p>
          </div>
-          <div id="get-bonus-btn" class ="hover:bg-blue-100 flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="get-bonus-btn" class ="btn-hover   flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/bonus1.png" alt="" class="">
             <p>Get Bonus</p>
          </div>
-          <div id="pay-bill-btn" class ="hover:bg-blue-100 flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="pay-bill-btn" class ="btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/purse1.png" alt="" class="">
             <p>Pay Bill</p>
          </div>
-          <div id="wallet-btn" class ="hover:bg-blue-100 flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="wallet-btn" class ="btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/wallet1.png" alt="" class="">
             <p>Wallet</p>
          </div>
 
     </div>
 <!--  Add Money Section -->
-<div id="add_money_section" class="max-w-lg mx-auto mt-6 ">
+<div class="form" id="add_money_section" class="max-w-lg mx-auto mt-6 ">
 
     <h1 class="text-2xl font-bold mb-4">Add Money</h1>
 
@@ -79,7 +79,7 @@
         </select>
 
         <fieldset class="fieldset">
-            <legend class="fieldset-legend">Account Number</legend>
+            <legend class="fieldset-legend"> Bank Account Number</legend>
             <input type="text" id="accountNumber"
                 class="w-full input bg-[#f4f5f7] rounded-3xl"
                 placeholder="Enter Account Number (must be 11 digits)">
@@ -102,7 +102,7 @@
         <button id="home-btn"
             type="button"
             class="btn bg-[#0874f2] text-white mt-5 w-full rounded-3xl">
-            Login
+             Add Balance
         </button>
 
     </div>
@@ -110,7 +110,7 @@
 </div>
 
 <!-- Cash Out Section -->
-  <div id="cash-out-section" class="max-w-lg mx-auto mt-6 " style="display: none;">
+  <div class="form" id="cash-out-section" class="max-w-lg mx-auto mt-6 " style="display: none;">
 
     <h1 class="text-2xl font-bold mb-4">Cash Out</h1>
 
@@ -124,7 +124,7 @@
         </select>
 
         <fieldset class="fieldset">
-            <legend class="fieldset-legend">Account Number</legend>
+            <legend class="fieldset-legend"> Bank Account Number</legend>
             <input type="text" id="cash-account-number"
                 class="w-full input bg-[#f4f5f7] rounded-3xl"
                 placeholder="Enter Account Number (must be 11 digits)">
@@ -152,6 +152,110 @@
 
 </div>
 
+<!-- Transfer money Section -->
+  <div class="form" id="transfer-section" class="max-w-lg mx-auto mt-6 " style="display:none;">
+
+    <h1 class="text-2xl font-bold mb-4">Transfer Money</h1>
+
+    <div class="p-5 bg-white rounded-2xl min-h-[300px]">
+
+        <select class="w-full bg-[#f4f5f7] rounded-3xl select [&::picker(select)]:max-h-26">
+            <option disabled selected>Select Bank</option>
+            <option>Dutch Bangla</option>
+            <option>IFIC Bank</option>
+            <option>Exim Bank</option>
+        </select>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Bank Account Number</legend>
+            <input type="text" id="transfer-account-number"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter Account Number (must be 11 digits)">
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Pin Number</legend>
+            <input type="text" id="transfer-pin-number"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter 4-Digit Pin">
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Amount</legend>
+            <input type="text" id="transfer-amount"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter Amount">
+        </fieldset>
+
+        <button id="Transfer-btn"
+            type="button"
+            class="btn bg-[#0874f2] text-white mt-5 w-full rounded-3xl"> Transfer</button>
+
+    </div>
+
+</div>
+
+<!-- GetBonus Section -->
+  <div class="form" id="getBonus-section" class="max-w-lg mx-auto mt-6 " style="display:none;">
+
+    <h1 class="text-2xl font-bold mb-4">Get Bonus</h1>
+
+    <div class="p-5 bg-white rounded-2xl min-h-[300px]">
+
+        <select class="w-full bg-[#f4f5f7] rounded-3xl select [&::picker(select)]:max-h-26">
+            <option disabled selected>Select Bank</option>
+            <option>Dutch Bangla</option>
+            <option>IFIC Bank</option>
+            <option>Exim Bank</option>
+        </select>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Account Number</legend>
+            <input type="text" id="getBonus-account-number"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter Account Number (must be 11 digits)">
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Pin Number</legend>
+            <input type="text" id="getBonus-pin-number"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter 4-Digit Pin">
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <legend class="fieldset-legend">Bonus</legend>
+            <input type="text" id="getBonus-amount"
+                class="w-full input bg-[#f4f5f7] rounded-3xl"
+                placeholder="Enter Bonus(%)">
+        </fieldset>
+
+        <button id="getBonus-btn"
+            type="button"
+            class="btn bg-[#0874f2] text-white mt-5 w-full rounded-3xl"> Get Bonus</button>
+
+    </div>
+
+</div>
+<!-- //Pay bill section -->
+<div class="form" id="payBill-section" class="max-w-lg mx-auto mt-6 " style="display:none;">
+
+     <h1 class="text-2xl font-bold mb-4">Pay Bill</h1>
+   <div class="p-5 bg-white rounded-2xl min-h-[300px]">
+
+    </div>
+
+</div>
+
+<!-- //Wallet section -->
+<div class="form" id="wallet-section" class="max-w-lg mx-auto mt-6 " style="display:none;">
+
+    <h1 class="text-2xl font-bold mb-4">Wallet</h1>
+   <div class="p-5 bg-white rounded-2xl min-h-[300px]">
+
+    </div>
+
+</div>
 <script src="home.js"></script>
 </body>
 </html>
