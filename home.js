@@ -1,4 +1,6 @@
 
+const transactionData = [ ]
+
 function validateAccount(accountNumber, pin) {
     const validAccount = "11309429057";
     const validPin = "1234";
@@ -24,6 +26,7 @@ function validateAccount(accountNumber, pin) {
 // Add Money Functionality
 document.getElementById("home-btn").addEventListener("click", function (event) {
     event.preventDefault();
+    console.log("add money clickeddd");
 
     const Acc_no = "11309429057";
     const pinNumber = "1234";
@@ -34,10 +37,7 @@ document.getElementById("home-btn").addEventListener("click", function (event) {
     const addBalanceValue = parseFloat(document.getElementById("addBalance").value);
 
     // Validation
-    if (accountNumberValue.length !== 11) {
-        alert("Account Number must be 11 digits");
-        return;
-    }
+    
 
     if (!validateAccount(accountNumberValue, pinNumberValue)) {
         return;
@@ -47,10 +47,7 @@ document.getElementById("home-btn").addEventListener("click", function (event) {
         alert("Enter a valid amount");
         return;
     }
-     if (  pinNumberValue !== pinNumber) {
-        alert("Invalid  PIN");
-        return;
-    }
+   
 
     if (isNaN(addBalanceValue) || addBalanceValue <= 0) {
         alert("Enter a valid amount");
@@ -61,6 +58,14 @@ document.getElementById("home-btn").addEventListener("click", function (event) {
     document.getElementById("available-balance").innerText = newBalance;
 
     alert(`Balance ${addBalanceValue} added successfully.`);
+
+   const transaction = {
+        type: "Add Money",
+        amount: addBalanceValue,
+        date: new Date().toLocaleString(),
+    };
+    transactionData.push(transaction);
+
 });
 
 
@@ -108,6 +113,13 @@ document.getElementById("withdraw-btn").addEventListener("click", function (even
     document.getElementById("available-balance").innerText = newBalance;
 
     alert(`Balance ${withdrawAmount} withdrawn successfully.`);
+
+    const transaction = {
+        type: "Cash Out",
+        amount: withdrawAmount,
+        date: new Date().toLocaleString(),
+    };
+    transactionData.push(transaction);
 });
 
 
@@ -142,6 +154,13 @@ document.getElementById("Transfer-btn").addEventListener("click", function (even
     document.getElementById("available-balance").innerText = newBalance;
 
     alert(`Amount ${transferAmount} transferred to ${accountNumberValue} successfully.`);
+
+    const transaction = {
+        type: "Transfer Money",
+        amount: transferAmount ,
+        date: new Date().toLocaleString(),
+    };
+    transactionData.push(transaction);
 });
 
 // GetBonus Functionality
@@ -164,6 +183,41 @@ document.getElementById("getBonus-btn").addEventListener("click", function (even
     document.getElementById("available-balance").innerText = newBalance;
 
     alert(`Bonus ${bonusAmount} added successfully.`);
+
+    const transaction = {
+        type: "Get Bonus",
+        amount: bonusAmount,
+        date: new Date().toLocaleString(),
+    };
+    transactionData.push(transaction);
+});
+
+// transaction history view section
+document.getElementById("transaction-btn").addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const transactionContainer = document.getElementById("transaction-container");
+ 
+    transactionContainer.innerHTML = ""; //remove previous data
+
+    for (const data of transactionData) {
+        const div = document.createElement("div");
+
+        div.innerHTML = `
+        <div class="flex justify-between items-center mb-2.5 bg-white rounded-2xl p-3">
+        <div class="flex gap-5  " >
+            <img class=" rounded-4xl p-4 bg-gray-200" src="./assets/purse1.png" alt="">
+            <div >
+                <h1 class="text-xl">${data.type}:${data.amount} Taka</h1>
+                <p class="text-gray-500">${data.date}</p>
+            </div>
+        </div>
+        <p class="text-2xl rotate-90">...</p>
+        </div>
+        `;
+
+        transactionContainer.appendChild(div);
+    }
 });
 
 
@@ -230,12 +284,28 @@ document.getElementById("pay-bill-btn").addEventListener("click", function (even
     activeButton("pay-bill-btn");
 });
 
-//wallet-btn
-document.getElementById("wallet-btn").addEventListener("click", function (event) {
-    // console.log("wallet btn clickeddd");
+ 
+// get-bonus-btn
+document.getElementById("get-bonus-btn").addEventListener("click", function (event) {
+console.log("get bonus btn clickeddd");
     event.preventDefault();
-     handleFormToggle("wallet-section");
-    activeButton("wallet-btn");
+  handleFormToggle("getBonus-section");
+  activeButton("get-bonus-btn");
+});
+//pay-bill-btn
+document.getElementById("pay-bill-btn").addEventListener("click", function (event) {
+    console.log("pay bill btn clickeddd");
+    event.preventDefault();
+     handleFormToggle("payBill-section");
+    activeButton("pay-bill-btn");
+});
+
+//Transaction-btn
+document.getElementById("transaction-btn").addEventListener("click", function (event) {
+    // console.log("transaction btn clickeddd");
+    event.preventDefault();
+     handleFormToggle("transaction-section");
+    activeButton("transaction-btn");
 });
 
 // log out btn

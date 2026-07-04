@@ -58,9 +58,9 @@
             <img src="./assets/purse1.png" alt="" class="">
             <p>Pay Bill</p>
          </div>
-          <div id="wallet-btn" class ="btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
+          <div id="transaction-btn" class ="btn-hover  flex flex-col items-center gap-2 border border-gray-300 p-4 rounded-lg">
             <img src="./assets/wallet1.png" alt="" class="">
-            <p>Wallet</p>
+            <p> Transactions</p>
          </div>
 
     </div>
@@ -238,23 +238,54 @@
 
 </div>
 <!-- //Pay bill section -->
-<div  id="payBill-section" class=" form max-w-lg mx-auto mt-6 " style="display:none;">
+<div id="payBill-section" class="form max-w-lg mx-auto mt-5" style="display:none;">
 
-     <h1 class="text-2xl font-bold mb-4">Pay Bill</h1>
-   <div class="p-5 bg-white rounded-2xl min-h-[300px]">
+    <h1 class="text-2xl font-bold mb-2.5">Pay Bill</h1>
 
+    <div class="p-5 bg-gray-100 rounded-2xl mb-2.5">
+        <div class="flex justify-between items-center bg-white rounded-2xl p-3">
+            <div class="flex gap-5">
+                <img class="rounded-full p-4 bg-gray-200" src="./assets/purse1.png" alt="">
+                <h1 class="text-xl mt-2.5 text-gray-500">Electricity Bill</h1>
+            </div>
+            <p class="text-2xl rotate-90">...</p>
+        </div>
     </div>
+
+    <div class="p-5 bg-gray-100 rounded-2xl">
+        <div class="flex justify-between items-center bg-white rounded-2xl p-3">
+            <div class="flex gap-5">
+                <img class="rounded-full p-4 bg-gray-200" src="./assets/purse1.png" alt="">
+                <h1 class="text-xl mt-2.5 text-gray-500">Gas Bill</h1>
+            </div>
+            <p class="text-2xl rotate-90">...</p>
+        </div>
+    </div>
+
+    <div class="p-5 bg-gray-100 rounded-2xl">
+        <div class="flex justify-between items-center bg-white rounded-2xl p-3">
+            <div class="flex gap-5">
+                <img class="rounded-full p-4 bg-gray-200" src="./assets/purse1.png" alt="">
+                <h1 class="text-xl mt-2.5 text-gray-500">Internet Bill</h1>
+            </div>
+            <p class="text-2xl rotate-90">...</p>
+        </div>
+    </div>
+
 
 </div>
 
-<!-- //Wallet section -->
-<div  id="wallet-section" class=" form max-w-lg mx-auto mt-6 " style="display:none;">
-
-    <h1 class="text-2xl font-bold mb-4">Wallet</h1>
-   <div class="p-5 bg-white rounded-2xl min-h-[300px]">
-
+<!-- // Transactions-->
+<div  id="transaction-section" class=" form max-w-lg mx-auto mt-6 " style="display:none;">
+    <div class="flex justify-between ">
+         <h1 class="text-2xl font-bold mb-4">Transactions</h1>
+         <h1 class="text-xl text-gray-500 ">View </h1>
     </div>
-
+ 
+    <div id="transaction-container">
+       
+    </div>
+      
 </div>
 <script src="home.js"></script>
 </body>
